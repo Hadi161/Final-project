@@ -15,11 +15,11 @@ export default function Home() {
 
   return(
     <>
-      <NavBar />
+      <Navbar />
       <main style={{ padding: '1rem'}}>
         <h1>Event Manager</h1>
         <EventForm onAdd={addEvent} />
-        <EventList events={events} />
+        <Eventlist events={events} />
       </main>
       <Footer />
     </>
