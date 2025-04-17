@@ -6,6 +6,7 @@ export default function NavBar() {
     <nav style={{ padding: '1rem', background: '#333', color: '#fff' }}>
       <Link href="/" style={{ marginRight: '1rem', color: '#fff' }}>Home</Link>
       <Link href="/contact" style={{ color: '#fff' }}>Contact</Link>
+      <Link href="/events" style={{ marginLeft: '1rem', color: '#fff' }}>Events</Link>
     </nav>
   );
 }
