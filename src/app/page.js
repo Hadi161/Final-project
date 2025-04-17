@@ -1,9 +1,9 @@
 "use client";
 import { useState } from 'react';
-import NavBar from '/components/NavBar';
-import Footer from '/components/Footer';
-import EventForm from '/components/EventForm';
-import EventList from '/components/EventList';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import EventForm from './components/EventForm';
+import Eventlist from './components/Eventlist';
 
 export default function Home() {
   const [events, setEvents] = useState ([]);
