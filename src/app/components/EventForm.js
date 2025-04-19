@@ -8,7 +8,13 @@ export default function EventForm({ onAdd }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!title || !date) return;
-    onAdd({ title, date });
+
+    onAdd({
+      id: crypto.randomUUID(),
+      title,
+      date
+    });
+
     setTitle('');
     setDate('');
   };
@@ -20,18 +26,16 @@ export default function EventForm({ onAdd }) {
         placeholder="Event Title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        style={{ marginRight: '0.5rem' }}
         required
+        style={{ marginRight: '0.5rem' }}
       />
-
       <input
         type="date"
         value={date}
         onChange={(e) => setDate(e.target.value)}
-        style={{ marginRight: '0.5rem' }}
         required
+        style={{ marginRight: '0.5rem' }}
       />
-
       <button type="submit">Add Event</button>
     </form>
   );
