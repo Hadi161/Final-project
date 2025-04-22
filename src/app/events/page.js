@@ -1,16 +1,23 @@
-import Eventlist from '../components/Eventlist';
+"use client";
+
+import React, { Suspense } from "react";
+
+const Eventlist = React.lazy(() => import("../components/Eventlist"));
 
 export default function EventsPage() {
   const sampleEvents = [
-    { id: '1', title: 'Event 1', date: '2025-05-10' },
-    { id: '2', title: 'Event 2', date: '2025-05-15' },
+    { id: "1", title: "Event 1", date: "2025-05-10" },
+    { id: "2", title: "Event 2", date: "2025-05-15" },
   ];
 
   return (
-    <main>
+    <main style={{ padding: "1rem" }}>
       <h1>All Events</h1>
-      <Eventlist events={sampleEvents} />
+      <Suspense fallback={<p>Loading Event List...</p>}>
+        <Eventlist events={sampleEvents} />
+      </Suspense>
     </main>
   );
 }
+
 
